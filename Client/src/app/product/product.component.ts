@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() view: 'grid' | 'list' ='list'; // deafult value 
+  @Input() view: 'grid' | 'list' ='grid'; // deafult value 
 
   constructor() { }
 

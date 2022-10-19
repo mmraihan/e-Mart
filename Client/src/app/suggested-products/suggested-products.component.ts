@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-suggested-products',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./suggested-products.component.css']
 })
 export class SuggestedProductsComponent implements OnInit {
+
+  @Input() count: number=3
 
   constructor() { }
 
