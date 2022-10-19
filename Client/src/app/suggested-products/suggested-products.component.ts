@@ -1,3 +1,4 @@
+import { Category } from './../models/models';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./suggested-products.component.css']
 })
 export class SuggestedProductsComponent implements OnInit {
+  @Input() category: Category={
+    id:0,
+    category:'',
+    subcategory:'',
+  }
 
   @Input() count: number=3
 
