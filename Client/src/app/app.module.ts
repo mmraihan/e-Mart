@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailsComponent,
     CartComponent,
     OrderComponent,
+    HeaderComponent,
     
   ],
   imports: [
