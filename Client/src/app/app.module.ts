@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HeaderComponent } from './header/header.component';
     CartComponent,
     OrderComponent,
     HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
