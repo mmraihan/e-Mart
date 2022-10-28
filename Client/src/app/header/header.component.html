@@ -5,7 +5,7 @@
     
     <div class="btn-toolbar" role="toolbar">
         <div class="btn-group btn-group-lg " role="group">
-            <button type="button" class="btn btn-outline-dark">Home</button>
+            <button type="button" class="btn btn-outline-dark" routerLink="/home">Home</button>
             <div class="btn-group-lg me-3" role="group">
                 <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
                     Categories
@@ -28,13 +28,12 @@
             </div>
         </div>
         <div class="btn-group btn-group-lg me-2" role="group">
-            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#generalmodal">Login</button>
+            <button type="button" class="btn btn-outline-dark"  data-bs-toggle="modal" data-bs-target="#generalmodal">Login</button>
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#generalmodal">Register</button>
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#generalmodal">Account</button>
-            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#generalmodal">Cart</button>
+            <button type="button" class="btn btn-outline-dark" routerLink="/cart" data-bs-toggle="modal" data-bs-target="#generalmodal">Cart</button>
+            <button type="button" class="btn btn-outline-dark" routerLink="/orders" data-bs-toggle="modal" data-bs-target="#generalmodal">Orders</button>
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#generalmodal">Logout</button>
-          
-
         </div>
     </div>
 
