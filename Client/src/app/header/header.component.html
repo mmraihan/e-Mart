@@ -15,7 +15,7 @@
                     <ng-container *ngFor="let item of navigationList; let i = index;">
                         <li class="text-center fw-bold">{{item.category | titlecase}}</li>
                         <li *ngFor="let subcategory of item.subcategories" [style.cursor]="'pointer'">
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" OpenProducts [category]="{id:0, 'category': item.category, 'subcategory': subcategory }">
                                 {{subcategory | titlecase }}
                             </a>
                         
