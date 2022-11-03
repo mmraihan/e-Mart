@@ -2,7 +2,7 @@
 export interface Category{
     id: number;
     category: string;
-    subcategory: string;
+    subCategory: string;
 }
 export interface SuggestedProduct {
     banerimage: string;
@@ -13,3 +13,5 @@ export interface SuggestedProduct {
     category: string;
     subcategories: string[];
   }
+
+ 

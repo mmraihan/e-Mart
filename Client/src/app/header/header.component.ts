@@ -1,7 +1,8 @@
-import { NavigationItem } from './../models/models';
+import { NavigationItem, Category } from './../models/models';
 import { Component, ElementRef, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -13,21 +14,33 @@ export class HeaderComponent implements OnInit {
   @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
 
-  navigationList: NavigationItem[]=[
-    {
-      category: "Electronics",
-      subcategories: ['Mobiles', 'Laptops']
-    },
-    {
-      category: "Furniture",
-      subcategories: ['Tables', 'Chairs']
-    }
+  navigationList: NavigationItem[]=[];
+  
+  
 
-  ];
-
-  constructor() { }
+  constructor(private navigationService :NavigationService ) { }
 
   ngOnInit(): void {
+
+    this.navigationService.getCategoryList().subscribe((list : Category[])=>{
+      for(let item of list){
+        let present = false;
+        for(let navItem of this.navigationList){
+          if(navItem.category===item.category){
+            navItem.subcategories.push(item.subCategory);
+            present=true;
+          }
+        }
+        if (!present) {
+          this.navigationList.push({
+            category: item.category,
+            subcategories: [item.subCategory],
+          });
+        }
+
+      }
+      
+    })
   }
 
 
