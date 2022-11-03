@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ECommerce.API.DataAccess;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
@@ -7,5 +8,20 @@ namespace ECommerce.API.Controllers
     [ApiController]
     public class ShoppingController : ControllerBase
     {
+        private readonly IDataAccess dataAccess;
+        private readonly string Dateformat;
+        public ShoppingController(IDataAccess dataAccess, IConfiguration configuration)
+        {
+            this.dataAccess = dataAccess;
+            Dateformat = configuration["Constants:DateFormat"];
+        }
+
+        [HttpGet("GetCategoryList")]
+
+        public IActionResult GetCategoryList()
+        {
+            var result = dataAccess.GetProductCategories();
+            return Ok(result);
+        }
     }
 }
